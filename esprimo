@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <iostream>
+using namespace std;
+int cuentadivisores(int numero);
+bool esprimo(int numero);
+int main()
+{
+    int numero;
+    
+    cout<<"Ingresa  el numero";
+    cin>>numero;
+    /*cout<<"Numero de divisores"<<cuentadivisores(numero)<<endl;
+    if(esprimo(numero)==true)
+        cout<<"si es primo";*/
+    for(int i=1;i<=numero;i++)
+    {
+       if(esprimo(i)==true)
+       cout<<i<<endl;
+    }
+
+    return 0;
+}
+
+int cuentadivisores(int numero)
+{
+   int contador=0;
+   for(int i=1;i<=numero;i++)
+   {
+       if(numero%i==0)
+       {
+           contador++;
+       }
+   }
+   return contador;
+}
+bool esprimo(int numero)
+{
+    if(cuentadivisores(numero)==2)
+    return true;
+    else
+    return false;
+}
